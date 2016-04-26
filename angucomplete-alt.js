@@ -359,6 +359,7 @@
             handleOverrideSuggestions(event);
             clearResults();
           }
+          scope.onEnterHandler();
           scope.$apply();
         } else if (which === KEY_DW && scope.results) {
           event.preventDefault();
@@ -631,6 +632,12 @@
         }
       }
 
+      scope.onEnterHandler = function() {
+        if (scope.onEnter) {
+          scope.onEnter();
+        }
+      };
+
       scope.onFocusHandler = function() {
         if (scope.focusIn) {
           scope.focusIn();
@@ -813,6 +820,7 @@
         autoMatch: '@',
         focusOut: '&',
         focusIn: '&',
+        onEnter: '&',
         fieldTabindex: '@',
         inputName: '@',
         focusFirst: '@',

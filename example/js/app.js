@@ -27,6 +27,10 @@ app.controller('MainController', ['$scope', '$http', '$rootScope',
       return matches;
     };
 
+    $scope.onEnter = function() {
+      window.alert('You have pressed the enter key');
+    }
+
     $scope.people = [
       {firstName: "Daryl", surname: "Rowland", twitter: "@darylrowland", pic: "img/daryl.jpeg"},
       {firstName: "Alan", surname: "Partridge", twitter: "@alangpartridge", pic: "img/alanp.jpg"},

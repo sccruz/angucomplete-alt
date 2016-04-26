@@ -45,6 +45,7 @@
           <li><a href="#example14">Example 14 - Custom Template</a></li>
           <li><a href="#example15">Example 15 - Clear Input on Button Click</a></li>
           <li><a href="#example16">Example 16 - Change Input on Button Click</a></li>
+          <li><a href="#example17">Example 17 - Add callback on Enter key press</a></li>
         </ul>
       </div>
 
@@ -659,7 +660,36 @@ $scope.localSearch = function(str, people) {
           </div>
         </div>
       </div>
+      <div class="large-padded-row">
 
+        <h3><a name="example17" class="page-anchor">Example 17 - Add callback on Enter key press</a></h3>
+        <div class="padded-row">
+<pre>
+&lt;div angucomplete-alt id="ex17"
+  placeholder="Search countries"
+  maxlength="50"
+  pause="100"
+  selected-object="selectedCountry"
+  local-data="countries"
+  search-fields="name"
+  title-field="name"
+  minlength="1"
+  input-class="form-control form-control-small"
+  match-class="highlight"
+  on-enter="OnEnter()"&gt;&lt;/div&gt;
+</pre>
+        </div>
+        <div class="padded-row">
+          <div angucomplete-alt id="ex17" placeholder="Search countries" maxlength="50" pause="100" selected-object="selectedCountry" local-data="countries" search-fields="name" title-field="name" minlength="1" input-class="form-control form-control-small" match-class="highlight" on-enter="onEnter()">
+          </div>
+        </div>
+        <div class="result">
+          <div ng-show="selectedCountry">
+            You selected <span class="bold-span">{{selectedCountry.originalObject.name}}</span> which has a country code of <span class="bold-span">{{selectedCountry.originalObject.code}}</span>
+          </div>
+        </div>
+
+      </div>
       <div class="very-large-padded-row">
         <h5>Originally developed by Daryl Rowland (<a href="http://twitter.com/darylrowland">@darylrowland</a>)</h5>
         <h5>Forked and developed by Hidenari Nozaki (<a href="http://twitter.com/ghiden">@ghiden</a>)</h5>
