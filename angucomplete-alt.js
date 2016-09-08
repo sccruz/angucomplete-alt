@@ -81,6 +81,8 @@
       var displaySearching;
       var displayNoResults;
 
+      scope.clearSelected = angular.isUndefined(scope.clearSelected) ? false : scope.clearSelected;
+
       elem.on('mousedown', function(event) {
         if (event.target.id) {
           mousedownOn = event.target.id;
@@ -817,7 +819,7 @@
         searchFields: '@',
         minlength: '@',
         matchClass: '@',
-        clearSelected: '@',
+        clearSelected: '=?',
         overrideSuggestions: '@',
         fieldRequired: '=',
         fieldRequiredClass: '@',
